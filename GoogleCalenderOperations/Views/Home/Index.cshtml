@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>My Google Calendar</h1>
+    @*<p class="lead">This sample demonstrates Google OAuth2 login as well as the Google Calendar API.</p>
+    <p>
+        When you log in using your Google account, you identify yourself to ASP.NET and also provide an access token
+        the server uses to call the Google API.
+    </p>*@
+    <p>
+        @if (Request.IsAuthenticated)
+        {
+            <a class="btn btn-default" href="@Url.Action("UpcomingEvents", "Calendar")">Future Events &raquo;</a>
+        }
+        else
+        {
+            <a class="btn btn-default" href="@Url.Action("Login", "Account")">Log in &raquo;</a>
+        }
+    </p>
+</div>
